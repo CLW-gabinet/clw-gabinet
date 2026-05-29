@@ -1,0 +1,283 @@
+/* ===== STRONA PODGLĄDU ===== */
+
+.info-page {
+    padding: 1rem;
+}
+
+.info-actions {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+    justify-content: flex-end;
+}
+
+/* ===== KONTENER KARTY — wygląda jak papier ===== */
+
+.karta-papier {
+    background: #fff;
+    color: #000;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 11pt;
+    line-height: 1.5;
+    width: 210mm;
+    min-height: 297mm;
+    padding: 15mm 15mm;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.12);
+    box-sizing: border-box;
+}
+
+/* ===== ELEMENTY KARTY ===== */
+
+.karta-naglowek {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 4px;
+    font-size: 11pt;
+}
+
+.karta-row {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2px;
+    flex-wrap: wrap;
+}
+
+.karta-separator {
+    color: #000;
+    font-size: 7pt;
+    letter-spacing: 0;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.karta-sekcja-naglowek {
+    font-weight: bold;
+    margin: 6px 0 2px;
+    font-size: 11pt;
+}
+
+.karta-podnaglowek {
+    font-style: italic;
+    font-weight: bold;
+    margin: 4px 0 2px;
+    font-size: 10.5pt;
+}
+
+.karta-linia {
+    margin-bottom: 2px;
+    line-height: 1.6;
+}
+
+/* ===== POLA ===== */
+
+.field-inline {
+    margin-right: 1.5rem;
+}
+
+.field-label {
+    font-weight: bold;
+    margin-right: 4px;
+}
+
+.field-value {
+    font-weight: normal;
+}
+
+.field-value--underline {
+    border-bottom: 1px solid #000;
+    min-width: 120px;
+    display: inline-block;
+}
+
+.dotted-line {
+    display: flex;
+    align-items: baseline;
+    gap: 4px;
+    margin-bottom: 2px;
+    min-height: 18px;
+}
+
+.dotted-fill {
+    flex: 1;
+    border-bottom: 1px dotted #555;
+    min-height: 16px;
+    padding-bottom: 1px;
+}
+
+/* ===== TABELE ===== */
+
+.korekcja-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 9.5pt;
+    margin: 4px 0;
+}
+
+.korekcja-table td,
+.korekcja-table th {
+    border: 1px solid #000;
+    padding: 2px 4px;
+    text-align: center;
+    min-width: 28px;
+}
+
+.korekcja-table td:first-child {
+    font-weight: bold;
+}
+
+.half-table {
+    width: 50%;
+}
+
+/* ===== RUCHY OCZU ===== */
+
+.karta-ruchy-oczu {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    margin: 4px 0;
+    font-size: 9.5pt;
+}
+
+.label-oko {
+    font-weight: bold;
+    display: block;
+    text-align: center;
+    margin-bottom: 2px;
+}
+
+.ruch-table {
+    border-collapse: collapse;
+    font-size: 9pt;
+}
+
+.ruch-table td {
+    padding: 1px 4px;
+    text-align: center;
+    min-width: 24px;
+}
+
+.oko-symbol {
+    font-size: 16pt;
+    line-height: 1;
+}
+
+.nsuco-info {
+    font-size: 9.5pt;
+    margin-left: 1rem;
+    align-self: center;
+}
+
+/* ===== SKIASKOPIA ===== */
+
+.karta-skiaskopia-wynik {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    margin: 4px 0;
+    font-size: 10pt;
+}
+
+.krzyzyk-display {
+    font-family: monospace;
+}
+
+/* ===== WIDZENIE OBUOCZNE ===== */
+
+.karta-obuoczne {
+    display: flex;
+    gap: 0;
+    margin: 6px 0;
+    border: 1px solid #000;
+}
+
+.obuoczne-col {
+    flex: 1;
+    padding: 6px 8px;
+    font-size: 9.5pt;
+}
+
+.obuoczne-col--border {
+    border-left: 1px solid #000;
+}
+
+/* ===== FIKSACJA ===== */
+
+.karta-fiksacja {
+    display: flex;
+    gap: 2rem;
+    margin: 6px 0;
+    align-items: flex-start;
+}
+
+.fiksacja-table {
+    width: auto;
+    font-size: 9.5pt;
+}
+
+.fiksacja-table td {
+    min-width: 20px;
+    padding: 2px 6px;
+}
+
+/* ===== DRUKOWANIE ===== */
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+
+    .info-page {
+        padding: 0;
+    }
+
+    .karta-papier {
+        border: none;
+        box-shadow: none;
+        margin: 0;
+        padding: 10mm 12mm;
+        width: 100%;
+    }
+
+    body {
+        background: #fff !important;
+    }
+}
+
+/* ===== RESPONSYWNOŚĆ (ekran mniejszy niż karta A4) ===== */
+
+@media screen and (max-width: 800px) {
+    .karta-papier {
+        width: 100%;
+        min-height: unset;
+        padding: 1rem;
+        font-size: 10pt;
+    }
+
+    .karta-obuoczne {
+        flex-direction: column;
+    }
+
+    .obuoczne-col--border {
+        border-left: none;
+        border-top: 1px solid #000;
+    }
+
+    .half-table {
+        width: 100%;
+    }
+
+    .karta-fiksacja {
+        flex-direction: column;
+    }
+
+    .karta-ruchy-oczu {
+        flex-wrap: wrap;
+    }
+
+    .info-actions {
+        justify-content: flex-start;
+    }
+}
