@@ -390,19 +390,19 @@ export default function ChildrenCardInfo() {
                             <table className="ruch-table">
                                 <tbody>
                                     <tr>
-                                        <td>{d.ruch_ol6}</td>
-                                        <td>{d.ruch_ol7}</td>
-                                        <td>{d.ruch_ol8}</td>
+                                        <td>{d.ruch_ol6 || '++'}</td>
+                                        <td>{d.ruch_ol7 || '++'}</td>
+                                        <td>{d.ruch_ol8 || '++'}</td>
                                     </tr>
                                     <tr>
-                                        <td>{d.ruch_ol5}</td>
+                                        <td>{d.ruch_ol5 || '++'}</td>
                                         <td className="oko-symbol">○</td>
-                                        <td>{d.ruch_ol1}</td>
+                                        <td>{d.ruch_ol1 || '++'}</td>
                                     </tr>
                                     <tr>
-                                        <td>{d.ruch_ol4}</td>
-                                        <td>{d.ruch_ol3}</td>
-                                        <td>{d.ruch_ol2}</td>
+                                        <td>{d.ruch_ol4 || '++'}</td>
+                                        <td>{d.ruch_ol3 || '++'}</td>
+                                        <td>{d.ruch_ol2 || '++'}</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -412,19 +412,19 @@ export default function ChildrenCardInfo() {
                             <table className="ruch-table">
                                 <tbody>
                                     <tr>
-                                        <td>{d.ruch_op6}</td>
-                                        <td>{d.ruch_op7}</td>
-                                        <td>{d.ruch_op8}</td>
+                                        <td>{d.ruch_op6 || '++'}</td>
+                                        <td>{d.ruch_op7 || '++'}</td>
+                                        <td>{d.ruch_op8 || '++'}</td>
                                     </tr>
                                     <tr>
-                                        <td>{d.ruch_op5}</td>
+                                        <td>{d.ruch_op5 || '++'}</td>
                                         <td className="oko-symbop">○</td>
-                                        <td>{d.ruch_op1}</td>
+                                        <td>{d.ruch_op1 || '++'}</td>
                                     </tr>
                                     <tr>
-                                        <td>{d.ruch_op4}</td>
-                                        <td>{d.ruch_op3}</td>
-                                        <td>{d.ruch_op2}</td>
+                                        <td>{d.ruch_op4 || '++'}</td>
+                                        <td>{d.ruch_op3 || '++'}</td>
+                                        <td>{d.ruch_op2 || '++'}</td>
                                     </tr>
                                 </tbody>
                             </table>
