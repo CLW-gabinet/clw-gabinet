@@ -34,6 +34,21 @@ export default function Dashboard() {
         
     }
 
+    useEffect(() => {
+        async function fetchProfile() {
+            console.log('user:', user)
+            const { data, error } = await supabase
+                .from('profiles')
+                .select('imie, nazwisko, rola')
+                .eq('id', user.id)
+                .single()
+            console.log('profile data:', data)
+            console.log('error:', error)
+            setProfile(data)
+        }
+        if (user) fetchProfile()
+    }, [user])
+
     return (
         <div>
             <button onClick={handleLogOut} className="log-out">
