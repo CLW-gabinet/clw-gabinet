@@ -31,7 +31,16 @@ function DottedLine({ label, value }) {
     )
 }
 
-async function handleDelete() {
+export default function LinesCardInfo() {
+    const { id } = useParams()
+    const navigate = useNavigate()
+    const [data, setData] = useState(null)
+    const [createdAt, setCreatedAt] = useState(null)
+    const [loading, setLoading] = useState(true)
+    const [doctorInfo, setDoctorInfo] = useState(null)
+    const [lastEditInfo, setLastEditInfo] = useState(null)
+
+    async function handleDelete() {
         const decision = confirm('Czy na pewno chcesz usunąć tę kartę? Tej operacji nie można cofnąć.')
         if (!decision) return
 
@@ -48,15 +57,6 @@ async function handleDelete() {
             navigate('/search-card')
         }
     }
-
-export default function LinesCardInfo() {
-    const { id } = useParams()
-    const navigate = useNavigate()
-    const [data, setData] = useState(null)
-    const [createdAt, setCreatedAt] = useState(null)
-    const [loading, setLoading] = useState(true)
-    const [doctorInfo, setDoctorInfo] = useState(null)
-    const [lastEditInfo, setLastEditInfo] = useState(null)
 
     useEffect(() => {
         async function fetchData() {
