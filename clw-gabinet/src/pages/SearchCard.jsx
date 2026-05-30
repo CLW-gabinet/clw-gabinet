@@ -66,7 +66,9 @@ function PatientCard({ form }) {
                 <div className="patient-card-date">
                     Data utworzenia: <u>{new Date(form.created_at).toLocaleDateString()}</u>
                 </div>
-                 
+                 {form.status === 'unfinished' && (
+                    <span className="status-badge status-badge--inactive">Nieukończona</span>
+                )}
             </div>
             <button className='wroc zobacz' onClick={handleNavigate}>Zobacz</button>
         </div>

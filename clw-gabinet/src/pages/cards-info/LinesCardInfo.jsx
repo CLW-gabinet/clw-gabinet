@@ -31,6 +31,24 @@ function DottedLine({ label, value }) {
     )
 }
 
+async function handleDelete() {
+        const decision = confirm('Czy na pewno chcesz usunąć tę kartę? Tej operacji nie można cofnąć.')
+        if (!decision) return
+
+
+        const { error } = await supabase
+            .from('patient_forms')
+            .delete()
+            .eq('id', id)
+
+
+        if (error) {
+            alert('Błąd podczas usuwania karty')
+        } else {
+            navigate('/search-card')
+        }
+    }
+
 export default function LinesCardInfo() {
     const { id } = useParams()
     const navigate = useNavigate()
@@ -123,6 +141,9 @@ export default function LinesCardInfo() {
             <div className="info-actions no-print">
                 <button className="return" onClick={() => navigate('/search-card')}>
                     <ArrowBigLeft size={18} />
+                </button>
+                <button className="wroc" onClick={handleDelete}>
+                    <span>Usuń kartę</span>
                 </button>
                 <button className="dalej" onClick={() => navigate(`/card/lines/edit/${id}`)}>
                     <span>Edytuj</span>

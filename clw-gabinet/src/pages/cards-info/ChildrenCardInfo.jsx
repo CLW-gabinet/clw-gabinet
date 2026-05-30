@@ -23,6 +23,24 @@ function Field({ label, value, inline = false }) {
     )
 }
 
+async function handleDelete() {
+        const decision = confirm('Czy na pewno chcesz usunąć tę kartę? Tej operacji nie można cofnąć.')
+        if (!decision) return
+
+
+        const { error } = await supabase
+            .from('patient_forms')
+            .delete()
+            .eq('id', id)
+
+
+        if (error) {
+            alert('Błąd podczas usuwania karty')
+        } else {
+            navigate('/search-card')
+        }
+    }
+
 // Linia z wielokropkiem jak na papierze
 function DottedLine({ label, value, dots = true }) {
     return (
@@ -135,6 +153,9 @@ export default function ChildrenCardInfo() {
             <div className="info-actions no-print">
                 <button className="return" onClick={() => navigate('/search-card')}>
                     <ArrowBigLeft size={18} />
+                </button>
+                <button className="wroc" onClick={handleDelete}>
+                    <span>Usuń kartę</span>
                 </button>
                 <button className="dalej" onClick={() => navigate(`/card/children/edit/${id}`)}>
                     <span>Edytuj</span>
